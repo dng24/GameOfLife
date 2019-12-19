@@ -1,0 +1,277 @@
+\section{production.\+h File Reference}
+\label{production_8h}\index{production.\+h@{production.\+h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ production} (int argc, char $\ast$argv[$\,$])
+\item 
+void \textbf{ num\+Rows\+And\+Cols} (F\+I\+LE $\ast$fp, int $\ast$num\+Rows\+In\+File, int $\ast$num\+Cols\+In\+File)
+\item 
+void \textbf{ initialize\+Array} (char $\ast$A, char $\ast$filename, int n\+Rows, int n\+Cols, int num\+Rows\+In\+File, int num\+Cols\+In\+File)
+\item 
+void \textbf{ Play\+One} (unsigned int nr, unsigned int nc, char $\ast$Old, char $\ast$New)
+\item 
+char \textbf{ get\+Letter} (int row, int col, int n\+Cols, char $\ast$Old)
+\item 
+int \textbf{ How\+Many\+Neighbors} (int row, int col, int n\+Rows, int n\+Cols, char $\ast$Old)
+\item 
+int \textbf{ generate} (int gens, int n\+Rows, int n\+Cols, char $\ast$old\+\_\+p, char $\ast$new\+\_\+p, char $\ast$other\+\_\+p, char print, char pause)
+\item 
+bool \textbf{ anyX} (char $\ast$arr, int n\+Rows, int n\+Cols)
+\item 
+bool \textbf{ same\+Content} (char $\ast$one\+\_\+p, char $\ast$another\+\_\+p, int n\+Rows, int n\+Cols)
+\item 
+void \textbf{ print\+This} (int n\+Rows, int n\+Cols, char $\ast$old\+\_\+p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\label{production_8h_a85f4ceb7eddb00ab9989daf800a74d3f}} 
+\index{production.\+h@{production.\+h}!anyX@{anyX}}
+\index{anyX@{anyX}!production.\+h@{production.\+h}}
+\subsubsection{any\+X()}
+{\footnotesize\ttfamily bool anyX (\begin{DoxyParamCaption}\item[{char $\ast$}]{arr,  }\item[{int}]{n\+Rows,  }\item[{int}]{n\+Cols }\end{DoxyParamCaption})}
+
+Determines if any organisms are still alive 
+\begin{DoxyParams}{Parameters}
+{\em arr} & Array of organisms \\
+\hline
+{\em n\+Rows} & Number of rows in array \\
+\hline
+{\em n\+Cols} & Number of columns in array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if organisms (x\textquotesingle{}s) are present; false if no organisms (x\textquotesingle{}s) are present 
+\end{DoxyReturn}
+
+
+Referenced by generate(), and test\+Any\+X().
+
+\mbox{\label{production_8h_a7986ca2f4339fb9c9d88ac88dff0f34d}} 
+\index{production.\+h@{production.\+h}!generate@{generate}}
+\index{generate@{generate}!production.\+h@{production.\+h}}
+\subsubsection{generate()}
+{\footnotesize\ttfamily int generate (\begin{DoxyParamCaption}\item[{int}]{gens,  }\item[{int}]{n\+Rows,  }\item[{int}]{n\+Cols,  }\item[{char $\ast$}]{old\+\_\+p,  }\item[{char $\ast$}]{new\+\_\+p,  }\item[{char $\ast$}]{other\+\_\+p,  }\item[{char}]{print,  }\item[{char}]{pause }\end{DoxyParamCaption})}
+
+Generates a new generation \& checks for stopping conditions 
+\begin{DoxyParams}{Parameters}
+{\em gens} & Maximum generations to play game \\
+\hline
+{\em n\+Rows} & Number of rows in the arrays \\
+\hline
+{\em n\+Cols} & Number of columns in the arrays \\
+\hline
+{\em old\+\_\+p} & Pointer to the previous generation \\
+\hline
+{\em new\+\_\+p} & Pointer to the current generation \\
+\hline
+{\em other\+\_\+p} & Pointer to two generations ago \\
+\hline
+{\em print} & Determines if each generation should be printed\+: \textquotesingle{}y\textquotesingle{} for yes, \textquotesingle{}n\textquotesingle{} for no \\
+\hline
+{\em pause} & Determines if there should be a pause between generations\+: \textquotesingle{}y\textquotesingle{} for yes, \textquotesingle{}n\textquotesingle{} for no \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of generations played 
+\end{DoxyReturn}
+
+
+References any\+X(), Play\+One(), print\+This(), and same\+Content().
+
+
+
+Referenced by production(), test\+Generate(), test\+Generate2(), and test\+Generate3().
+
+\mbox{\label{production_8h_adc602acdc7ecd4199ad2b30ac03feb52}} 
+\index{production.\+h@{production.\+h}!get\+Letter@{get\+Letter}}
+\index{get\+Letter@{get\+Letter}!production.\+h@{production.\+h}}
+\subsubsection{get\+Letter()}
+{\footnotesize\ttfamily char get\+Letter (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{int}]{n\+Cols,  }\item[{char $\ast$}]{Old }\end{DoxyParamCaption})}
+
+Gets a letter from an array 
+\begin{DoxyParams}{Parameters}
+{\em row} & Row to retrieve the letter from \\
+\hline
+{\em col} & Column to retrieve the letter from \\
+\hline
+{\em n\+Cols} & Number of columns in the array \\
+\hline
+{\em Old} & Pointer to the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a letter 
+\end{DoxyReturn}
+
+
+Referenced by How\+Many\+Neighbors(), Play\+One(), and test\+Get\+Letter().
+
+\mbox{\label{production_8h_ab629e8f86e0183efbb59ef24422116cb}} 
+\index{production.\+h@{production.\+h}!How\+Many\+Neighbors@{How\+Many\+Neighbors}}
+\index{How\+Many\+Neighbors@{How\+Many\+Neighbors}!production.\+h@{production.\+h}}
+\subsubsection{How\+Many\+Neighbors()}
+{\footnotesize\ttfamily int How\+Many\+Neighbors (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{int}]{n\+Rows,  }\item[{int}]{n\+Cols,  }\item[{char $\ast$}]{Old }\end{DoxyParamCaption})}
+
+Determines the number of neighbors (x\textquotesingle{}s) surrounding a cell 
+\begin{DoxyParams}{Parameters}
+{\em row} & Row that cell is located in \\
+\hline
+{\em col} & Column that cell is located in \\
+\hline
+{\em n\+Rows} & Number of rows in the array \\
+\hline
+{\em n\+Cols} & Number of columns in the array \\
+\hline
+{\em Old} & Pointer to the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of neighbors (x\textquotesingle{}s) surrounding a cell 
+\end{DoxyReturn}
+
+
+References get\+Letter().
+
+
+
+Referenced by Play\+One(), and test\+How\+Many\+Neighbors().
+
+\mbox{\label{production_8h_ab3fa4a3b2449083309e25ab339aca52f}} 
+\index{production.\+h@{production.\+h}!initialize\+Array@{initialize\+Array}}
+\index{initialize\+Array@{initialize\+Array}!production.\+h@{production.\+h}}
+\subsubsection{initialize\+Array()}
+{\footnotesize\ttfamily void initialize\+Array (\begin{DoxyParamCaption}\item[{char $\ast$}]{A,  }\item[{char $\ast$}]{filename,  }\item[{int}]{n\+Rows,  }\item[{int}]{n\+Cols,  }\item[{int}]{num\+Rows\+In\+File,  }\item[{int}]{num\+Cols\+In\+File }\end{DoxyParamCaption})}
+
+Creates the initial generation 
+\begin{DoxyParams}{Parameters}
+{\em A} & Array to be initialized \\
+\hline
+{\em filename} & Pointer to filename of the input file \\
+\hline
+{\em n\+Rows} & Number of rows on the board \\
+\hline
+{\em n\+Cols} & Number of columns on the board \\
+\hline
+{\em num\+Rows\+In\+File} & Number of rows in the file \\
+\hline
+{\em num\+Cols\+In\+File} & Number of columns in the file \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by production(), and test\+Initialize\+Array().
+
+\mbox{\label{production_8h_a4eeafffb12bd7be27f9f66ad8a6cd73f}} 
+\index{production.\+h@{production.\+h}!num\+Rows\+And\+Cols@{num\+Rows\+And\+Cols}}
+\index{num\+Rows\+And\+Cols@{num\+Rows\+And\+Cols}!production.\+h@{production.\+h}}
+\subsubsection{num\+Rows\+And\+Cols()}
+{\footnotesize\ttfamily void num\+Rows\+And\+Cols (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{int $\ast$}]{num\+Rows\+In\+File,  }\item[{int $\ast$}]{num\+Cols\+In\+File }\end{DoxyParamCaption})}
+
+Calculates the number or rows and columns in the input file 
+\begin{DoxyParams}{Parameters}
+{\em fp} & Pointer to the input file \\
+\hline
+{\em num\+Rows\+In\+File} & Pointer to the variable that stores the number of rows in the input file \\
+\hline
+{\em num\+Cols\+In\+File} & Pointer to the variable that stores the number of columns in the input file \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by production(), and test\+Num\+Rows\+And\+Cols().
+
+\mbox{\label{production_8h_af5b14d1dae61b5bee7bc0c3aa0dea79e}} 
+\index{production.\+h@{production.\+h}!Play\+One@{Play\+One}}
+\index{Play\+One@{Play\+One}!production.\+h@{production.\+h}}
+\subsubsection{Play\+One()}
+{\footnotesize\ttfamily void Play\+One (\begin{DoxyParamCaption}\item[{unsigned int}]{nr,  }\item[{unsigned int}]{nc,  }\item[{char $\ast$}]{Old,  }\item[{char $\ast$}]{New }\end{DoxyParamCaption})}
+
+Play\+One carries out one generation 
+\begin{DoxyParams}{Parameters}
+{\em nr} & Number of rows in the petri dish \\
+\hline
+{\em nc} & Number of columns in the petri dish \\
+\hline
+{\em Old} & Location of the upper left of starting petri dish \\
+\hline
+{\em New} & Location of the upper left of the ending petri dish \\
+\hline
+\end{DoxyParams}
+
+
+References get\+Letter(), and How\+Many\+Neighbors().
+
+
+
+Referenced by generate(), test\+Play\+One(), and test\+Play\+One2().
+
+\mbox{\label{production_8h_ab73ab2c09c3d3d34fa5239433d488ff9}} 
+\index{production.\+h@{production.\+h}!print\+This@{print\+This}}
+\index{print\+This@{print\+This}!production.\+h@{production.\+h}}
+\subsubsection{print\+This()}
+{\footnotesize\ttfamily void print\+This (\begin{DoxyParamCaption}\item[{int}]{n\+Rows,  }\item[{int}]{n\+Cols,  }\item[{char $\ast$}]{old\+\_\+p }\end{DoxyParamCaption})}
+
+Prints the x\textquotesingle{}s in the array 
+\begin{DoxyParams}{Parameters}
+{\em n\+Rows} & Number of rows in the array \\
+\hline
+{\em n\+Cols} & Number of columns in the array \\
+\hline
+{\em old\+\_\+p} & Pointer to the array to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by generate(), and production().
+
+\mbox{\label{production_8h_a9f67b51c42a54745557e7a2c9c07c46f}} 
+\index{production.\+h@{production.\+h}!production@{production}}
+\index{production@{production}!production.\+h@{production.\+h}}
+\subsubsection{production()}
+{\footnotesize\ttfamily bool production (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv[$\,$] }\end{DoxyParamCaption})}
+
+Main production code. Reads arguments from the command line. 
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of words on the command line \\
+\hline
+{\em argv} & Array of pointers to character strings representing the words on the command line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the game was able to be played; false if the user entered bad input 
+\end{DoxyReturn}
+
+
+References generate(), initialize\+Array(), num\+Rows\+And\+Cols(), and print\+This().
+
+
+
+Referenced by main().
+
+\mbox{\label{production_8h_a6bc14537b7dc8361ace9f0ee6aa49440}} 
+\index{production.\+h@{production.\+h}!same\+Content@{same\+Content}}
+\index{same\+Content@{same\+Content}!production.\+h@{production.\+h}}
+\subsubsection{same\+Content()}
+{\footnotesize\ttfamily bool same\+Content (\begin{DoxyParamCaption}\item[{char $\ast$}]{one\+\_\+p,  }\item[{char $\ast$}]{another\+\_\+p,  }\item[{int}]{n\+Rows,  }\item[{int}]{n\+Cols }\end{DoxyParamCaption})}
+
+Determines if two arrays are identical 
+\begin{DoxyParams}{Parameters}
+{\em one\+\_\+p} & Pointer to one array \\
+\hline
+{\em another\+\_\+p} & Pointer to a second array \\
+\hline
+{\em n\+Rows} & Number of rows in the array \\
+\hline
+{\em n\+Cols} & Number of columns in the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if both arrays are identical; false if there is a difference in the arrays 
+\end{DoxyReturn}
+
+
+Referenced by generate(), and tests\+Same\+Content().
+
